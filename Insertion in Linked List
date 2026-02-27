@@ -1,0 +1,49 @@
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+class SingleLL:
+    def __init__(self):
+        self.head = None
+    def insert_begn(self, data):
+        nb = Node(data)
+        nb.next = self.head
+        self.head = nb
+    def insert_end(self, data):
+        ne = Node(data)
+        #if list is empty the new node becomes head
+        if self.head is None:
+            self.head = ne
+            return
+        temp = self.head
+        while temp.next:
+            temp = temp.next
+        temp.next = ne
+    def display(self):
+        if self.head is None:
+            print("List is empty.")
+        else:
+            temp = self.head
+            while temp:
+                #Cleaner format for the output
+                print(f"{temp.data} -->", end=" ")
+                temp = temp.next
+            print("None")    #Indicates the end of the list
+            
+            
+#driver Code
+l = SingleLL()
+l.insert_begn(30)
+l.insert_begn(20)
+l.insert_begn(10)
+
+print("Initial List :-")
+l.display()
+
+print("\nInserting 100 at the beginning :-")
+l.insert_begn(100)
+l.display()
+
+print("\nInserting 500 at the end :-")
+l.insert_end(500)
+l.display()
