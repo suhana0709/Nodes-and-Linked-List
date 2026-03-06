@@ -1,0 +1,91 @@
+#Insertion in SLL (Single Linked List)
+ 
+class Node:
+    """Represents a single node in a linked list."""
+    def __init__(self, data: any):
+        self.data = data
+        self.next = None
+
+class SinglyLinkedList:
+    """A class to manage a singly linked list."""
+    def __init__(self):
+        self.head = None
+
+    def append(self, data):
+        """Helper to add new nodes to the end of the list."""
+        new_node = Node(data)
+        if not self.head:
+            self.head = new_node
+            return
+        
+        last = self.head
+        while last.next:
+            last = last.next
+        last.next = new_node
+
+    def swap_nodes(self, key_1: any, key_2: any):
+        """Swaps two nodes based on their data values."""
+        if key_1 == key_2:
+            return
+
+        # Initialize pointers for search
+        prev_1, curr_1 = None, self.head
+        prev_2, curr_2 = None, self.head
+
+        # Search for key_1
+        while curr_1 and curr_1.data != key_1:
+            prev_1 = curr_1
+            curr_1 = curr_1.next
+
+        # Search for key_2
+        while curr_2 and curr_2.data != key_2:
+            prev_2 = curr_2
+            curr_2 = curr_2.next
+
+        # If either node is not present, exit
+        if not curr_1 or not curr_2:
+            print(f"Swapping not possible: One or both keys ({key_1}, {key_2}) not found.")
+            return
+
+        # Adjust the 'next' pointer of the previous nodes
+        if prev_1:
+            prev_1.next = curr_2
+        else:
+            self.head = curr_2
+
+        if prev_2:
+            prev_2.next = curr_1
+        else:
+            self.head = curr_1# 
+
+        # Swap the 'next' pointers of the current nodes
+        curr_1.next, curr_2.next = curr_2.next, curr_1.next
+
+    def display(self):
+        """Prints the list in a readable format."""
+        if not self.head:
+            print("List is empty")
+            return
+
+        nodes = []
+        current = self.head
+        while current:
+            nodes.append(str(current.data))
+            current = current.next
+        print(" -> ".join(nodes))
+
+# --- Driver Code ---
+if __name__ == "__main__":
+    llist = SinglyLinkedList()
+    
+    # Adding data cleanly
+    for value in [10, 20, 30, 40]:
+        llist.append(value)
+
+    print("Original List:")
+    llist.display()
+
+    print("\nSwapping 10 and 30:")
+    llist.swap_nodes(10, 30)
+    llist.display()
+    
