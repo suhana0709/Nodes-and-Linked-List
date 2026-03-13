@@ -1,0 +1,22 @@
+x = [ [2, 3],
+      [4, 5] ]
+print("Matrix no. 1: ",x)
+      
+y = [ [2, 1],
+      [5, 6]]
+print("Matrix no. 2: ",y)
+      
+answer = [ [0, 0],
+           [0, 0] ]
+           
+           
+for i in range (len(x)):
+    for j in range (len(y[0])):
+        for k in range (len(y)):
+            
+            #matrix multiplication formula
+            answer[i][j] += x[i][k] * y[k][j]
+            
+print("\nAnswer after performing Matrix Multiplication:- ")
+for r in answer:
+    print(r)
