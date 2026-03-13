@@ -1,0 +1,17 @@
+#Matrix Addition
+
+x = [ [8, 2],
+      [4, 1] ]
+                    #initializing nested list
+y = [ [3, 8],
+      [9, 15] ]
+      
+answer = [ [0, 0],
+           [0, 0] ]
+           
+for i in range(len(x)):                    #outer loop for row
+    for j in range(len(x[0])):             #inner loop for coloumn
+        answer[i][j] = x[i][j] + y[i][j]
+        
+for r in answer:
+    print(r)
