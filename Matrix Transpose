@@ -1,0 +1,17 @@
+# initializing matrix
+x = [ [2, 3, 5],
+      [6, 4, 1],
+      [0, 7, 8] ]
+      
+#making an empty matrix to store the answer
+answer = [ [0, 0, 0],
+           [0, 0, 0],
+           [0, 0, 0] ]
+           
+#loop for Matrix Transpose
+for i in range(len(x)):         #outer loop for coloumn
+    for j in range(len(x[0])):  #inner loop for row
+        answer[i][j] = x[j][i]
+        
+for r in answer:
+    print(r)
