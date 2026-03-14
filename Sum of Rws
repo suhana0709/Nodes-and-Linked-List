@@ -1,0 +1,16 @@
+# initializing matrix
+x = [ [2, 3, 5],
+      [6, 4, 1],
+      [0, 7, 8] ]
+      
+
+answer = 0
+           
+
+for j in range(len(x)):         
+    for i in range(len(x[0])):  
+        #Row-wise sum of items
+        answer = answer + x[j][i]
+    #print the row sum
+    print(answer, end=" ")
+    answer = 0
