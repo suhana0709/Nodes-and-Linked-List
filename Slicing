@@ -1,0 +1,12 @@
+# Slicing
+s = "Codingal"
+print(s)
+#1
+print(s[:3])
+print(s[3:])
+print(s[1:5:2])
+
+#print the string in reverse
+print(s[::-1])
+print(s[-1:-9:-2])
+print(s[-2:-9:2])
