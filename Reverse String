@@ -1,0 +1,15 @@
+#function to reverse a string
+def reverse(s):
+    n = len(s)    #finding the length of the string
+    li = list(s)  # converting the string into list, so that it will be             easy to swap
+    
+    for i in range(n//2):
+        #swapping the first and last, second and second last element and so on...
+        li[i], li[n-i-1] = li[n-i-1], li[i]
+        
+        return "".join(li)    #returning the output as a string format
+        
+#driver code
+print("REVERSE STRING")
+string = str(input("Enter String: "))
+print(reverse(string))
