@@ -1,0 +1,23 @@
+# Take input from user
+original_string = input("Enter a string: ")
+
+# Replace a character
+pos_replace = int(input("Enter position to replace (0-based index): "))
+new_char = input("Enter new character: ")
+
+# Replace using slicing
+modified_string = (
+    original_string[:pos_replace] + new_char + original_string[pos_replace + 1:]
+)
+
+# Delete a character
+pos_delete = int(input("Enter position to delete (0-based index): "))
+
+# Delete using slicing
+modified_string = (
+    modified_string[:pos_delete] + modified_string[pos_delete + 1:]
+)
+
+# Output results
+print("\nOriginal String:", original_string)
+print("Modified String:", modified_string)
