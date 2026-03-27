@@ -1,0 +1,16 @@
+#program to cange the cases of letters
+#in a string
+def changeTheCase(s):
+    result = " "
+    for i in s:
+        if i.islower():   #if a string is in lower case
+            result = result + i.upper()  #it will be changed to upper case and stored in restlt
+        if i.isupper():      #.. and vice versa
+            result = result + i.lower()
+    return result
+    
+#driver code
+s = input("Enter a string: ")
+print("String after changing the cases:-")
+r = changeTheCase(s)
+print("--->",r)
