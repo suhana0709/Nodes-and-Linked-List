@@ -1,0 +1,16 @@
+# Vowel Remover
+def removeVowel(s):
+    result = " "   #creating a place to store the final result
+    li = ['a', 'e', 'i', 'o', 'u'] #a list that stores all the vowels 
+    #loop
+    for i in range(len(s)):#traversing till the very end of the string
+        if s[i] in li:  #if a vowel is present in the string..
+            result = result + " "  # we will put a space in there
+        else: # and if not...
+            result = result + s[i] # we will put the string in there
+    return result
+    
+#driver code
+print("**** Vowel Remover ****")
+s = input("Enter the string: ")
+print(removeVowel(s))
