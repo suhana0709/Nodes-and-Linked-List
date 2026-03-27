@@ -1,0 +1,7 @@
+#Removing Spaces
+print("Space Remover")
+text = input("Enter a text:")
+
+result = "".join(text.split())  #joining the things that have spaces
+
+print(result)
