@@ -1,0 +1,19 @@
+# palindrome: a string is same when reversed,ex: madam stays same when reversed
+#program to check if a string is Palindrome or not
+
+def reverse(s):
+    return s[::-1]   #function for reversing a string
+    
+def isPalindrome(s):
+    s = s.lower()  #lowering the cases for easier acess
+    rev_string = reverse(s)  #making the string reversed for comparing
+    
+    if s == rev_string:
+        print("The string:",s,",is a Palindrome.")
+    else:
+        print("The string:",s,",is not a Palindrome.")
+        
+#driver code
+print("****Palindrome Checker****")
+s = input("Enter the string: ")
+isPalindrome(s)
