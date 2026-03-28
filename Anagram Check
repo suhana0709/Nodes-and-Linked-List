@@ -1,0 +1,23 @@
+#Anagram: words that have the same no. of letters but are in different arrangemant. Example: silent, 
+#Anagram Checker
+def frequency(word):
+    word = word.replace(" ","").lower()   #remove spaces, makes all the letters small
+    counts = {}
+    for letter in word:
+        if letter in counts:
+            counts[letter] += 1
+        else:
+            counts[letter] = 1
+    return counts
+    
+def check(w1, w2):
+    if frequency(w1) == frequency(w2):
+        return True
+    else:
+        return False
+        
+print("Anagram Checker:-\n")
+#taking inputs
+word1 = input("Enter word no.1: ")
+word2 = input("Enter word no.2: ")
+print(check(word1, word2))
