@@ -1,0 +1,10 @@
+#print the ASCII values of string
+
+def ASCII_value(inp):
+    li = []
+    for i in inp:
+        n = ord(i)
+        print("ASCII value of",i,": ",n)
+    
+inp = input("Enter the string: ")
+print(ASCII_value(inp))
